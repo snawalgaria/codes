@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -77,7 +78,11 @@ public class Testmap {
 	}
 	private static Map<String, Integer> readfromFile() throws FileNotFoundException, IOException {
 		Map<String,Integer> m = new HashMap<String,Integer>();
-		FileReader fr=new FileReader("C:/users/snawalga/file1.txt");
+		BufferedReader bin = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter the File Path");
+		String filePath=bin.readLine();
+		//Enter the path of the file to be read. Example filePath = "C:/users/snawalga/file1.txt"
+		FileReader fr=new FileReader(filePath);
 		BufferedReader br=new BufferedReader(fr);
 		String Line;
 		String words[];
